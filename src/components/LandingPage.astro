@@ -18,6 +18,10 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const formatTitle = (text: string) => {
+    return text.replace(/<blue>(.*?)<\/blue>/g, '<span>$1</span>');
+};
 ---
 
 <nav>
@@ -49,7 +53,7 @@ const t = useTranslations(lang);
                 <span class="badge-text">{t('hero.badge')}</span>
                 <ArrowRight size={14} />
             </div>
-            <h1>{t('hero.title').split(t('hero.title.span'))[0]}<span>{t('hero.title.span')}</span>{t('hero.title').split(t('hero.title.span'))[1]}</h1>
+            <h1 set:html={formatTitle(t('hero.title'))}></h1>
             <p>{t('hero.desc')}</p>
             <div class="hero-actions">
                 <a href={`https://${business.whatsapp}`} target="_blank" class="btn btn-primary btn-lg">{t('hero.cta.primary')}</a>
@@ -63,7 +67,7 @@ const t = useTranslations(lang);
         <div class="container">
             <div class="section-badge">{t('offerings.badge')}</div>
             <div class="section-title">
-                <h2>{t('offerings.title').split(t('offerings.title.span'))[0]}<span>{t('offerings.title.span')}</span>{t('offerings.title').split(t('offerings.title.span'))[1]}</h2>
+                <h2 set:html={formatTitle(t('offerings.title'))}></h2>
                 <p>{t('offerings.desc')}</p>
             </div>
             <div class="features-grid">
@@ -106,7 +110,7 @@ const t = useTranslations(lang);
         <div class="container">
             <div class="section-badge">{t('expertise.badge')}</div>
             <div class="section-title">
-                <h2>{t('expertise.title').split(t('expertise.title.span'))[0]}<span>{t('expertise.title.span')}</span>{t('expertise.title').split(t('expertise.title.span'))[1]}</h2>
+                <h2 set:html={formatTitle(t('expertise.title'))}></h2>
                 <p>{t('expertise.desc')}</p>
             </div>
             <div class="expertise-grid">
@@ -147,7 +151,7 @@ const t = useTranslations(lang);
         <div class="container">
             <div class="section-badge">{t('process.badge')}</div>
             <div class="section-header-center">
-                <h2 style="color: white;">{t('process.title').split(t('process.title.span'))[0]}<span>{t('process.title.span')}</span>{t('process.title').split(t('process.title.span'))[1]}</h2>
+                <h2 style="color: white;" set:html={formatTitle(t('process.title'))}></h2>
             </div>
             <div class="process-steps">
                 <div class="step">
@@ -179,7 +183,7 @@ const t = useTranslations(lang);
         <div class="container">
             <div class="testimonial-header">
                 <div class="section-badge">{t('testimonial.badge')}</div>
-                <h2>{t('testimonial.title').split(t('testimonial.title.span'))[0]}<span>{t('testimonial.title.span')}</span>{t('testimonial.title').split(t('testimonial.title.span'))[1]}</h2>
+                <h2 set:html={formatTitle(t('testimonial.title'))}></h2>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
@@ -213,7 +217,7 @@ const t = useTranslations(lang);
         <div class="container">
             <div class="cta-wrapper">
                 <div class="section-badge">{t('cta.badge')}</div>
-                <h2>{t('cta.title').split(t('cta.title.span'))[0]}<span>{t('cta.title.span')}</span>{t('cta.title').split(t('cta.title.span'))[1]}</h2>
+                <h2 set:html={formatTitle(t('cta.title'))}></h2>
                 <p>{t('cta.desc')}</p>
                 <div class="cta-btns">
                     <a href={`https://${business.whatsapp}`} target="_blank" class="btn btn-primary btn-lg"><Calendar style="margin-right: 10px;" size={18} /> {t('cta.primary')}</a>
@@ -385,7 +389,7 @@ const t = useTranslations(lang);
 		margin: 0 auto 1.5rem;
 	}
 
-	.hero h1 span {
+	.hero h1 :global(span) {
 		color: var(--accent);
 	}
 
@@ -431,12 +435,16 @@ const t = useTranslations(lang);
 		margin-bottom: 5rem;
 	}
 
+	.section-header-center h2 :global(span) {
+		color: var(--accent);
+	}
+
 	.section-title h2 {
 		font-size: clamp(2.5rem, 5vw, 3.5rem);
 		margin-bottom: 1.5rem;
 	}
 
-	.section-title h2 span {
+	.section-title h2 :global(span) {
 		color: var(--accent);
 	}
 
@@ -562,7 +570,7 @@ const t = useTranslations(lang);
 		font-size: clamp(2.5rem, 5vw, 3.5rem);
 	}
 
-	.testimonial-header h2 span {
+	.testimonial-header h2 :global(span) {
 		color: var(--accent);
 	}
 
@@ -631,6 +639,10 @@ const t = useTranslations(lang);
 	.cta-wrapper h2 {
 		font-size: clamp(2.5rem, 5vw, 4rem);
 		margin-bottom: 1.5rem;
+	}
+
+	.cta-wrapper h2 :global(span) {
+		color: var(--accent);
 	}
 
 	.cta-wrapper p {
