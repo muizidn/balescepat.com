@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Alex Rivera",
+    "role": "CTO at FinTechly",
+    "quote": {
+      "en": "Balescepat transformed our support overnight. We went from a 4-hour response time to 2 minutes without hiring a single person.",
+      "id": "Balescepat mengubah sistem support kami dalam sekejap. Waktu respons kami turun dari 4 jam menjadi 2 menit tanpa perlu menambah staf."
+    },
+    "stars": 5
+  },
+  {
+    "name": "Sarah Jenkins",
+    "role": "Head of Ops at CloudScale",
+    "quote": {
+      "en": "The best investment we've made this year. The ROI was clear within the first week of implementation.",
+      "id": "Investasi terbaik kami tahun ini. ROI-nya sudah terlihat jelas sejak minggu pertama implementasi."
+    },
+    "stars": 5
+  }
+]

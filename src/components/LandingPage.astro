@@ -11,6 +11,7 @@ import {
 } from 'lucide-astro';
 import { useTranslations } from '../i18n/utils';
 import business from '../../business.json';
+import testimonials from '../../business-testimonial.json';
 
 interface Props {
   lang: 'en' | 'id';
@@ -200,28 +201,19 @@ const formatTitle = (text: string) => {
                 <h2 set:html={formatTitle(t('testimonial.title'))}></h2>
             </div>
             <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>{t('testimonial.1.quote')}</p>
-                    <div class="author">
-                        <div class="u-avatar"></div>
-                        <div class="u-info">
-                            <strong>Alex Rivera</strong>
-                            <span>CTO at FinTechly</span>
+                {testimonials.map((t_item) => (
+                    <div class="testimonial-card">
+                        <div class="stars">{'★'.repeat(t_item.stars)}</div>
+                        <p>{t_item.quote[lang] || t_item.quote['en']}</p>
+                        <div class="author">
+                            <div class="u-avatar"></div>
+                            <div class="u-info">
+                                <strong>{t_item.name}</strong>
+                                <span>{t_item.role}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>{t('testimonial.2.quote')}</p>
-                    <div class="author">
-                        <div class="u-avatar"></div>
-                        <div class="u-info">
-                            <strong>Sarah Jenkins</strong>
-                            <span>Head of Ops at CloudScale</span>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     </section>
