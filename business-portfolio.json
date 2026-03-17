@@ -1,26 +1,53 @@
 [
   {
     "id": "project-1",
-    "title": "Enterprise AI Support Agent",
-    "description": "A <blue>fully automated</blue> customer support system that reduced response times by 95% for a global fintech company.",
+    "title": {
+      "en": "Enterprise AI Support Agent",
+      "id": "Agen Dukungan AI Enterprise"
+    },
+    "description": {
+      "en": "A <blue>fully automated</blue> customer support system that reduced response times by 95% for a global fintech company.",
+      "id": "Sistem dukungan pelanggan yang <blue>sepenuhnya otomatis</blue> yang mengurangi waktu respons hingga 95% untuk perusahaan fintech global."
+    },
     "images": [],
-    "category": "AI & Automation",
+    "category": {
+      "en": "AI & Automation",
+      "id": "AI & Otomatisasi"
+    },
     "tags": ["OpenAI", "Python", "React"]
   },
   {
     "id": "project-2",
-    "title": "High-Bandwidth Network Proxy",
-    "description": "Custom <blue>reverse proxy</blue> solution handling over 1TB of traffic daily with sub-millisecond latency.",
+    "title": {
+      "en": "High-Bandwidth Network Proxy",
+      "id": "Proxy Jaringan Bandwidth Tinggi"
+    },
+    "description": {
+      "en": "Custom <blue>reverse proxy</blue> solution handling over 1TB of traffic daily with sub-millisecond latency.",
+      "id": "Solusi <blue>reverse proxy</blue> kustom yang menangani lebih dari 1TB lalu lintas harian dengan latensi sub-milidetik."
+    },
     "images": [],
-    "category": "Infrastructure",
+    "category": {
+      "en": "Infrastructure",
+      "id": "Infrastruktur"
+    },
     "tags": ["Rust", "Go", "Docker"]
   },
   {
     "id": "project-3",
-    "title": "Corporate LMS Platform",
-    "description": "A <blue>bespoke</blue> learning management system for a Fortune 500 company, featuring AI-driven personalized learning paths.",
+    "title": {
+      "en": "Corporate LMS Platform",
+      "id": "Platform LMS Korporat"
+    },
+    "description": {
+      "en": "A <blue>bespoke</blue> learning management system for a Fortune 500 company, featuring AI-driven personalized learning paths.",
+      "id": "Sistem manajemen pembelajaran <blue>pesanan kustom</blue> untuk perusahaan Fortune 500, menghadirkan jalur pembelajaran personal berbasis AI."
+    },
     "images": [],
-    "category": "Software Engineering",
+    "category": {
+      "en": "Software Engineering",
+      "id": "Rekayasa Perangkat Lunak"
+    },
     "tags": ["Astro", "TypeScript", "PostgreSQL"]
   }
 ]
