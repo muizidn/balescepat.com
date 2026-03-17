@@ -26,9 +26,10 @@ const formatTitle = (text: string) => {
 
 <nav>
     <div class="container nav-content">
-        <div class="logo">balescepat<span>.</span></div>
+        <a href={lang === 'en' ? '/' : '/id'} class="logo">balescepat<span>.</span></a>
         <div class="nav-links">
             <a href="#offerings">{t('nav.offerings')}</a>
+            <a href={lang === 'en' ? '/portfolio' : '/id/portfolio'}>{t('nav.portfolio')}</a>
             <a href="#expertise">{t('nav.expertise')}</a>
             <a href="#process">{t('nav.process')}</a>
             <a href="#contact">{t('nav.contact')}</a>
@@ -294,6 +295,8 @@ const formatTitle = (text: string) => {
 		font-size: 1.5rem;
 		font-weight: 800;
 		letter-spacing: -0.05em;
+		text-decoration: none;
+		color: var(--text-main);
 	}
 
 	.logo span {

@@ -1,0 +1,443 @@
+---
+import { ArrowRight, Calendar, ExternalLink } from 'lucide-astro';
+import { useTranslations } from '../i18n/utils';
+import business from '../../business.json';
+import portfolioData from '../../portfolio.json';
+
+interface Props {
+  lang: 'en' | 'id';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const formatTitle = (text: string) => {
+    return text.replace(/<blue>(.*?)<\/blue>/g, '<span>$1</span>');
+};
+---
+
+<nav>
+    <div class="container nav-content">
+        <a href={lang === 'en' ? '/' : '/id'} class="logo">balescepat<span>.</span></a>
+        <div class="nav-links">
+            <a href={lang === 'en' ? '/#offerings' : '/id/#offerings'}>{t('nav.offerings')}</a>
+            <a href={lang === 'en' ? '/portfolio' : '/id/portfolio'} class="active">{t('nav.portfolio')}</a>
+            <a href={lang === 'en' ? '/#expertise' : '/id/#expertise'}>{t('nav.expertise')}</a>
+            <a href={lang === 'en' ? '/#process' : '/id/#process'}>{t('nav.process')}</a>
+            <a href={lang === 'en' ? '/#contact' : '/id/#contact'}>{t('nav.contact')}</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-switcher">
+                <a href="/portfolio" class={lang === 'en' ? 'active' : ''}>EN</a>
+                <span>/</span>
+                <a href="/id/portfolio" class={lang === 'id' ? 'active' : ''}>ID</a>
+            </div>
+            <a href={`https://${business.whatsapp}`} target="_blank" class="btn btn-primary">{t('nav.consult')}</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="section-badge">{t('portfolio.badge')}</div>
+            <h1 set:html={formatTitle(t('portfolio.title'))}></h1>
+            <p>{t('portfolio.desc')}</p>
+        </div>
+    </section>
+
+    <section class="portfolio-grid-section">
+        <div class="container">
+            <div class="portfolio-grid">
+                {portfolioData.map((project) => (
+                    <div class="project-card">
+                        {project.images && project.images.length > 0 ? (
+                            <div class="project-image">
+                                <img src={project.images[0]} alt={project.title} />
+                            </div>
+                        ) : (
+                            <div class="project-image-placeholder">
+                                <div class="placeholder-icon">
+                                    <ExternalLink size={40} />
+                                </div>
+                            </div>
+                        )}
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="category">{project.category}</span>
+                            </div>
+                            <h3>{project.title}</h3>
+                            <p set:html={formatTitle(project.description)}></p>
+                            <div class="project-tags">
+                                {project.tags.map(tag => (
+                                    <span class="tag">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Reused -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="section-badge">{t('cta.badge')}</div>
+                <h2 set:html={formatTitle(t('cta.title'))}></h2>
+                <p>{t('cta.desc')}</p>
+                <div class="cta-btns">
+                    <a href={`https://${business.whatsapp}`} target="_blank" class="btn btn-primary btn-lg"><Calendar style="margin-right: 10px;" size={18} /> {t('cta.primary')}</a>
+                    <a href={`mailto:${business.email}`} class="btn btn-outline btn-lg">{t('cta.secondary')}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="f-brand">
+                <div class="logo">balescepat<span>.</span></div>
+                <p>{t('footer.desc')}</p>
+            </div>
+            <div class="f-links">
+                <div class="link-col">
+                    <h4>{t('footer.expertise')}</h4>
+                    <a href="#">{t('footer.expertise.ai')}</a>
+                    <a href="#">{t('footer.expertise.software')}</a>
+                    <a href="#">{t('footer.expertise.security')}</a>
+                </div>
+                <div class="link-col">
+                    <h4>{t('footer.offerings')}</h4>
+                    <a href="#">{t('footer.offerings.whitelabel')}</a>
+                    <a href="#">{t('footer.offerings.training')}</a>
+                    <a href="#">{t('footer.offerings.lms')}</a>
+                </div>
+                <div class="link-col">
+                    <h4>{t('footer.connect')}</h4>
+                    <a href="#">{t('footer.connect.linkedin')}</a>
+                    <a href="#">{t('footer.connect.github')}</a>
+                    <a href={`https://${business.whatsapp}`} target="_blank">{t('footer.connect.contact')}</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {new Date().getFullYear()} {business.name}. {t('footer.rights')}</p>
+            <div class="socials">
+                <a href="#">TW</a>
+                <a href="#">LI</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+        height: 72px;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        text-decoration: none;
+        color: var(--text-main);
+    }
+
+    .logo span {
+        color: var(--accent);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+        color: var(--primary);
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .lang-switcher {
+        display: flex;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+
+    .lang-switcher a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s;
+    }
+
+    .lang-switcher a.active {
+        color: var(--accent);
+    }
+
+    /* Portfolio Hero */
+    .portfolio-hero {
+        padding: 10rem 0 4rem;
+        text-align: center;
+    }
+
+    .portfolio-hero h1 {
+        font-size: clamp(3rem, 8vw, 4.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .portfolio-hero h1 :global(span) {
+        color: var(--accent);
+    }
+
+    .portfolio-hero p {
+        font-size: 1.25rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid-section {
+        padding-bottom: 8rem;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .project-card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--card-shadow);
+        border-color: #EEE;
+    }
+
+    .project-image, .project-image-placeholder {
+        aspect-ratio: 16/9;
+        width: 100%;
+        overflow: hidden;
+        background: #F3F4F6;
+    }
+
+    .project-image-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+        color: var(--accent);
+        opacity: 0.6;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .project-card:hover .project-image img {
+        transform: scale(1.05);
+    }
+
+    .project-content {
+        padding: 2.5rem;
+    }
+
+    .project-meta {
+        margin-bottom: 1rem;
+    }
+
+    .category {
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+    }
+
+    .project-content h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-content p {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+
+    .project-content p :global(span) {
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .tag {
+        background: #F9FAFB;
+        border: 1px solid var(--border);
+        padding: 0.3rem 0.8rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+    }
+
+    /* CTA Section Reused */
+    .cta-section {
+        padding: 8rem 0;
+    }
+
+    .cta-wrapper {
+        background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%);
+        padding: 8rem 4rem;
+        border-radius: 64px;
+        text-align: center;
+        border: 1px solid var(--border);
+    }
+
+    .cta-wrapper h2 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-wrapper h2 :global(span) {
+        color: var(--accent);
+    }
+
+    .cta-wrapper p {
+        font-size: 1.35rem;
+        margin-bottom: 3rem;
+    }
+
+    .cta-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+        padding: 6rem 0 3rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 4rem;
+        margin-bottom: 6rem;
+    }
+
+    .f-brand p {
+        margin-top: 1.5rem;
+        max-width: 300px;
+    }
+
+    .f-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .link-col h4 {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .link-col a {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        text-decoration: none;
+        margin-bottom: 0.75rem;
+        transition: color 0.2s;
+    }
+
+    .link-col a:hover {
+        color: var(--primary);
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .socials {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    /* Global Typography from LandingPage style... simplified */
+    .section-badge {
+        color: var(--accent);
+        font-weight: 800;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+        .portfolio-grid { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .portfolio-hero h1 { font-size: 3rem; }
+        .cta-btns { flex-direction: column; }
+        .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+</style>

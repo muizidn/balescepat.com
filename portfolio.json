@@ -1,0 +1,26 @@
+[
+  {
+    "id": "project-1",
+    "title": "Enterprise AI Support Agent",
+    "description": "A <blue>fully automated</blue> customer support system that reduced response times by 95% for a global fintech company.",
+    "images": [],
+    "category": "AI & Automation",
+    "tags": ["OpenAI", "Python", "React"]
+  },
+  {
+    "id": "project-2",
+    "title": "High-Bandwidth Network Proxy",
+    "description": "Custom <blue>reverse proxy</blue> solution handling over 1TB of traffic daily with sub-millisecond latency.",
+    "images": [],
+    "category": "Infrastructure",
+    "tags": ["Rust", "Go", "Docker"]
+  },
+  {
+    "id": "project-3",
+    "title": "Corporate LMS Platform",
+    "description": "A <blue>bespoke</blue> learning management system for a Fortune 500 company, featuring AI-driven personalized learning paths.",
+    "images": [],
+    "category": "Software Engineering",
+    "tags": ["Astro", "TypeScript", "PostgreSQL"]
+  }
+]

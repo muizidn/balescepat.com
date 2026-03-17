@@ -1,5 +1,6 @@
 {
   "nav.offerings": "Layanan",
+  "nav.portfolio": "Portfolio",
   "nav.expertise": "Keahlian",
   "nav.process": "Alur Kerja",
   "nav.contact": "Kontak",
@@ -54,6 +55,9 @@
   "cta.desc": "Jadwalkan sesi diskusi 30 menit untuk membahas kebutuhan proyek Anda dan bagaimana kami dapat membantu Anda berkembang.",
   "cta.primary": "Jadwalkan Konsultasi",
   "cta.secondary": "Hubungi Tim Kami",
+  "portfolio.badge": "PROYEK KAMI",
+  "portfolio.title": "Portfolio <blue>Kami</blue>",
+  "portfolio.desc": "Jelajahi karya terbaru kami dalam pengembangan AI, perangkat lunak enterprise, dan infrastruktur performa tinggi.",
   "footer.desc": "Keunggulan teknik dalam bidang AI dan infrastruktur perusahaan.",
   "footer.expertise": "Keahlian",
   "footer.expertise.ai": "Pengembangan AI",
