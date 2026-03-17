@@ -1,23 +1,122 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Balescepat.com - Your Fast Response Solution" } = Astro.props;
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	:root {
+		--primary: #0A0A0A;
+		--accent: #4361EE;
+		--text-main: #0A0A0A;
+		--text-muted: #666666;
+		--bg: #FFFFFF;
+		--border: #E5E7EB;
+		--glow: rgba(67, 97, 238, 0.1);
+		--card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+	}
+
+	* {
+		box-sizing: border-box;
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0;
+	}
+
+	html, body {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: var(--bg);
+		color: var(--text-main);
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		overflow-x: hidden;
+	}
+
+	.container {
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.8rem 1.8rem;
+		border-radius: 9999px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+		cursor: pointer;
+		border: none;
+		text-decoration: none;
+	}
+
+	.btn-primary {
+		background: var(--primary);
+		color: white;
+	}
+
+	.btn-primary:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+	}
+
+	.btn-outline {
+		background: transparent;
+		border: 1px solid var(--border);
+		color: var(--primary);
+	}
+
+	.btn-outline:hover {
+		background: #F9FAFB;
+		border-color: var(--primary);
+	}
+
+	h1, h2, h3, h4 {
+		font-weight: 800;
+		letter-spacing: -0.04em;
+		line-height: 1.1;
+	}
+
+	p {
+		line-height: 1.6;
+		color: var(--text-muted);
+	}
+
+	section {
+		padding: 6rem 0;
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			padding: 0 1.5rem;
+		}
+		section {
+			padding: 4rem 0;
+		}
 	}
 </style>
