@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LandingPage from '../components/LandingPage.astro';
+import { getLangFromCookie, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromCookie(Astro);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Balescepat.com | Enterprise AI & Software Solutions">
-    <LandingPage lang="en" />
+<Layout title={t('hero.title').replace(/<blue>(.*?)<\/blue>/g, '$1')}>
+    <LandingPage lang={lang} />
 </Layout>

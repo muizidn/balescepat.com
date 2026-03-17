@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PortfolioPage from '../components/PortfolioPage.astro';
+import { getLangFromCookie, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromCookie(Astro);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Portfolio | Balescepat.com | Enterprise AI & Software Solutions">
-    <PortfolioPage lang="en" />
+<Layout title={`${t('nav.portfolio')} | Balescepat.com`}>
+    <PortfolioPage lang={lang} />
 </Layout>

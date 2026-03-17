@@ -1,8 +1,10 @@
 import { ui, defaultLang } from './ui';
 
-export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/');
-  if (lang in ui) return lang as keyof typeof ui;
+export function getLangFromCookie(Astro: any) {
+  const cookieLang = Astro.cookies.get('lang')?.value;
+  if (cookieLang && cookieLang in ui) {
+    return cookieLang as keyof typeof ui;
+  }
   return defaultLang;
 }
 

@@ -1,15 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'id'],
-    routing: {
-      prefixDefaultLocale: false
-    }
-  },
+  output: 'server',
+  adapter: node({
+    mode: 'standalone'
+  }),
   vite: {
     server: {
       allowedHosts: ['t470']

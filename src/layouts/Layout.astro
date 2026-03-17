@@ -11,8 +11,8 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 
-import { getLangFromUrl } from '../i18n/utils';
-const lang = getLangFromUrl(Astro.url);
+import { getLangFromCookie } from '../i18n/utils';
+const lang = getLangFromCookie(Astro);
 ---
 
 <!doctype html>

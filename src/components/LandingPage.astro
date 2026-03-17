@@ -26,24 +26,37 @@ const formatTitle = (text: string) => {
 
 <nav>
     <div class="container nav-content">
-        <a href={lang === 'en' ? '/' : '/id'} class="logo">balescepat<span>.</span></a>
+        <a href="/" class="logo">balescepat<span>.</span></a>
         <div class="nav-links">
             <a href="#offerings">{t('nav.offerings')}</a>
-            <a href={lang === 'en' ? '/portfolio' : '/id/portfolio'}>{t('nav.portfolio')}</a>
+            <a href="/portfolio">{t('nav.portfolio')}</a>
             <a href="#expertise">{t('nav.expertise')}</a>
             <a href="#process">{t('nav.process')}</a>
             <a href="#contact">{t('nav.contact')}</a>
         </div>
         <div class="nav-actions">
             <div class="lang-switcher">
-                <a href="/" class={lang === 'en' ? 'active' : ''}>EN</a>
+                <button class={lang === 'en' ? 'active' : ''} data-set-lang="en">EN</button>
                 <span>/</span>
-                <a href="/id" class={lang === 'id' ? 'active' : ''}>ID</a>
+                <button class={lang === 'id' ? 'active' : ''} data-set-lang="id">ID</button>
             </div>
             <a href={`https://${business.whatsapp}`} target="_blank" class="btn btn-primary">{t('nav.consult')}</a>
         </div>
     </div>
 </nav>
+
+<script>
+    const buttons = document.querySelectorAll('[data-set-lang]');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const newLang = button.getAttribute('data-set-lang');
+            if (newLang) {
+                document.cookie = `lang=${newLang}; path=/; max-age=31536000`; // 1 year
+                window.location.reload();
+            }
+        });
+    });
+</script>
 
 <main>
     <!-- Hero Section -->
@@ -334,17 +347,21 @@ const formatTitle = (text: string) => {
 		color: var(--text-muted);
 	}
 
-	.lang-switcher a {
-		text-decoration: none;
+	.lang-switcher button {
+		background: none;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
 		color: inherit;
 		transition: color 0.2s;
 	}
 
-	.lang-switcher a.active {
+	.lang-switcher button.active {
 		color: var(--accent);
 	}
 
-	.lang-switcher a:hover {
+	.lang-switcher button:hover {
 		color: var(--primary);
 	}
 
