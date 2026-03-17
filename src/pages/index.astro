@@ -1,21 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Zap, BarChart3, Globe, Shield, MessageSquare, ArrowRight } from 'lucide-astro';
+import { 
+	Bot, 
+	Code2, 
+	LayoutDashboard, 
+	GraduationCap, 
+	Network, 
+	BookOpen, 
+	ArrowRight,
+	Calendar
+} from 'lucide-astro';
 ---
 
-<Layout title="Balescepat.com | Scaling Human Response with AI Speed">
+<Layout title="Balescepat.com | Enterprise AI & Software Solutions">
 	<nav>
 		<div class="container nav-content">
 			<div class="logo">balescepat<span>.</span></div>
 			<div class="nav-links">
-				<a href="#features">Features</a>
-				<a href="#solutions">Solutions</a>
-				<a href="#testimonials">Testimonials</a>
-				<a href="#pricing">Pricing</a>
+				<a href="#offerings">Offerings</a>
+				<a href="#expertise">Expertise</a>
+				<a href="#process">Our Process</a>
+				<a href="#contact">Contact</a>
 			</div>
 			<div class="nav-actions">
-				<a href="#" class="login">Log in</a>
-				<button class="btn btn-primary">Get Started Free</button>
+				<button class="btn btn-primary">Book Consultation</button>
 			</div>
 		</div>
 	</nav>
@@ -25,89 +33,130 @@ import { Zap, BarChart3, Globe, Shield, MessageSquare, ArrowRight } from 'lucide
 		<section class="hero">
 			<div class="container hero-content">
 				<div class="badge-pill">
-					<span class="badge-new">v2.0</span>
-					<span class="badge-text">Now with advanced AI integration</span>
+					<span class="badge-new">Enterprise</span>
+					<span class="badge-text">Bespoke Software & AI Engineering</span>
 					<ArrowRight size={14} />
 				</div>
-				<h1>The ultimate <span>speed</span> for your customer service</h1>
-				<p>Scale your business with automated responses that feel human. Join 10,000+ companies using Balescepat to eliminate wait times.</p>
+				<h1>Building the future of <span>Digital</span> infrastructure</h1>
+				<p>Expert consulting and high-performance software engineering. We help teams scale with proprietary AI, custom proxies, and enterprise-grade tools.</p>
 				<div class="hero-actions">
-					<button class="btn btn-primary btn-lg">Start Free Trial</button>
-					<button class="btn btn-outline btn-lg">Schedule Demo</button>
+					<button class="btn btn-primary btn-lg">Consult with Us</button>
+					<button class="btn btn-outline btn-lg">View Our Work</button>
 				</div>
-				
-				<!-- Interactive Globe Visual -->
-				<div class="hero-visual">
-					<div class="glow-sphere"></div>
-					<div class="globe-wrap">
-						<svg viewBox="0 0 100 100" class="globe-svg">
-							<defs>
-								<pattern id="dotPattern" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse">
-									<circle cx="0.8" cy="0.8" r="0.4" fill="rgba(67, 97, 238, 0.4)" />
-								</pattern>
-							</defs>
-							<circle cx="50" cy="50" r="48" fill="url(#dotPattern)" class="globe-body" />
-							<ellipse cx="50" cy="50" rx="48" ry="15" fill="none" stroke="rgba(67, 97, 238, 0.15)" stroke-width="0.5" transform="rotate(45 50 50)" />
-							<ellipse cx="50" cy="50" rx="48" ry="15" fill="none" stroke="rgba(67, 97, 238, 0.15)" stroke-width="0.5" transform="rotate(-45 50 50)" />
-						</svg>
+			</div>
+		</section>
+
+		<!-- Service Offerings Grid -->
+		<section id="offerings" class="features">
+			<div class="container">
+				<div class="section-badge">CORE OFFERINGS</div>
+				<div class="section-title">
+					<h2>Proprietary solutions for <span>modern</span> enterprises</h2>
+					<p>From custom AI development to high-bandwidth network infrastructure, we build the tools that power growing organizations.</p>
+				</div>
+				<div class="features-grid">
+					<div class="feature-card">
+						<div class="icon-wrap"><Bot /></div>
+						<h3>Whitelabel Customer Service AI</h3>
+						<p>Own your infrastructure. We build custom-tuned AI support agents deployed on your own servers with your branding.</p>
+					</div>
+					<div class="feature-card">
+						<div class="icon-wrap"><Code2 /></div>
+						<h3>Enterprise Software Development</h3>
+						<p>Bespoke web, mobile, and desktop applications built with scale, security, and maintainability as first-class citizens.</p>
+					</div>
+					<div class="feature-card">
+						<div class="icon-wrap"><LayoutDashboard /></div>
+						<h3>AI Operating System Dashboard</h3>
+						<p>A centralized command center to monitor, manage, and orchestrate all your AI agents and automated workflows.</p>
+					</div>
+					<div class="feature-card">
+						<div class="icon-wrap"><GraduationCap /></div>
+						<h3>Software Developer Training</h3>
+						<p>Upskill your engineering team with intensive workshops on modern stacks, architecture, and AI-assisted coding.</p>
+					</div>
+					<div class="feature-card">
+						<div class="icon-wrap"><Network /></div>
+						<h3>HTTP Network Traffic Proxy</h3>
+						<p>High-performance proxy solutions designed for developer teams needing secure, manageable network interception.</p>
+					</div>
+					<div class="feature-card">
+						<div class="icon-wrap"><BookOpen /></div>
+						<h3>Enterprise LMS Solutions</h3>
+						<p>Custom Learning Management Systems tailored for corporate HR training, professional development, or educational institutions.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Trust Marquee -->
-		<div class="trust-marquee">
+		<!-- Expertise Section -->
+		<section id="expertise" class="expertise">
 			<div class="container">
-				<p>TRUSTED BY INNOVATIVE TEAMS WORLDWIDE</p>
-				<div class="logo-row">
-					<span class="brand">VOYAGER</span>
-					<span class="brand">PULSE</span>
-					<span class="brand">VERTEX</span>
-					<span class="brand">ORBIT</span>
-					<span class="brand">NEBULA</span>
-					<span class="brand">FLUX</span>
+				<div class="section-badge">EXPERTISE</div>
+				<div class="section-title">
+					<h2>Technical excellence at <span>every</span> layer</h2>
+					<p>We leverage a modern tech stack to build resilient, high-performance systems for global scale.</p>
+				</div>
+				<div class="expertise-grid">
+					<div class="exp-item">
+						<h4>AI & LLM Engineering</h4>
+						<p>Experience in RAG pipelines, model fine-tuning (Olama, OpenAI, Anthropic), and specialized agentic workflows.</p>
+						<div class="tech-tags">
+							<span>Python</span><span>PyTorch</span><span>LangChain</span>
+						</div>
+					</div>
+					<div class="exp-item">
+						<h4>High-Performance Systems</h4>
+						<p>Building massive throughput backends and network proxies with focus on sub-millisecond latency.</p>
+						<div class="tech-tags">
+							<span>Bun</span><span>Go</span><span>Rust</span><span>C++</span>
+						</div>
+					</div>
+					<div class="exp-item">
+						<h4>Cloud Infrastructure</h4>
+						<p>Deployment specialists for on-premise, edge computing, and hybrid cloud architectures.</p>
+						<div class="tech-tags">
+							<span>Kubernetes</span><span>Docker</span><span>Terraform</span>
+						</div>
+					</div>
+					<div class="exp-item">
+						<h4>Modern Web & Mobile</h4>
+						<p>Creating immersive, ultra-fast interfaces that provide a premium experience across all devices.</p>
+						<div class="tech-tags">
+							<span>Astro</span><span>React</span><span>TypeScript</span><span>Vite</span>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<!-- Features Grid -->
-		<section id="features" class="features">
+		<!-- Our Process Section -->
+		<section id="process" class="process dark-section">
 			<div class="container">
-				<div class="section-badge">SOLUTIONS</div>
-				<div class="section-title">
-					<h2>Built for <span>high-performance</span> teams</h2>
-					<p>Stop losing customers to slow response times. Our infrastructure is built to handle millions of messages with sub-second latency.</p>
+				<div class="section-badge">OUR PROCESS</div>
+				<div class="section-header-center">
+					<h2 style="color: white;">How we bring your <span>vision</span> to life</h2>
 				</div>
-				<div class="features-grid">
-					<div class="feature-card">
-						<div class="icon-wrap"><Zap /></div>
-						<h3>Instant Response</h3>
-						<p>Our AI-driven engine responds to customers in under 2 seconds, maintaining a 99% satisfaction rate.</p>
+				<div class="process-steps">
+					<div class="step">
+						<div class="step-num">01</div>
+						<h4>Discovery & Strategy</h4>
+						<p>We start by understanding your business goals and technical roadblocks through deep-dive sessions.</p>
 					</div>
-					<div class="feature-card">
-						<div class="icon-wrap"><Globe /></div>
-						<h3>Global Connectivity</h3>
-						<p>Integrate seamlessly with WhatsApp, Telegram, Instagram, and more through our unified API.</p>
+					<div class="step">
+						<div class="step-num">02</div>
+						<h4>Architecture Blueprint</h4>
+						<p>Our engineers design a tailor-made technical architecture focused on scalability and security.</p>
 					</div>
-					<div class="feature-card">
-						<div class="icon-wrap"><BarChart3 /></div>
-						<h3>Deep Analytics</h3>
-						<p>Get real-time insights into conversation patterns and team performance with our dashboard.</p>
+					<div class="step">
+						<div class="step-num">03</div>
+						<h4>Agile Execution</h4>
+						<p>Rapid, high-quality development with transparent updates and iterative feedback loops.</p>
 					</div>
-					<div class="feature-card">
-						<div class="icon-wrap"><Shield /></div>
-						<h3>Enterprise Security</h3>
-						<p>SOC2 compliant data handling ensures your customer conversations remain private and secure.</p>
-					</div>
-					<div class="feature-card">
-						<div class="icon-wrap"><MessageSquare /></div>
-						<h3>Smart Context</h3>
-						<p>Our AI understands the history of every customer interaction to provide relevant, personalized help.</p>
-					</div>
-					<div class="feature-card">
-						<div class="icon-wrap"><ArrowRight /></div>
-						<h3>And much more...</h3>
-						<p>Discover the full suite of tools designed to help your business scale efficiently.</p>
+					<div class="step">
+						<div class="step-num">04</div>
+						<h4>Deployment & Scale</h4>
+						<p>We deploy to your infrastructure and provide the training needed to manage your new systems.</p>
 					</div>
 				</div>
 			</div>
@@ -147,64 +196,16 @@ import { Zap, BarChart3, Globe, Shield, MessageSquare, ArrowRight } from 'lucide
 			</div>
 		</section>
 
-		<!-- Pricing Section -->
-		<section id="pricing" class="pricing">
-			<div class="container">
-				<div class="section-badge">PRICING</div>
-				<div class="section-title">
-					<h2>Simple, <span>transparent</span> pricing</h2>
-					<p>Choose the plan that's right for your business scale.</p>
-				</div>
-				<div class="pricing-grid">
-					<div class="pricing-card">
-						<h3>Starter</h3>
-						<div class="price">$0<span>/mo</span></div>
-						<p>Perfect for trying out Balescepat.</p>
-						<ul>
-							<li>1,000 messages / mo</li>
-							<li>Basic AI automation</li>
-							<li>1 Channel integration</li>
-						</ul>
-						<button class="btn btn-outline">Get Started</button>
-					</div>
-					<div class="pricing-card featured">
-						<div class="p-badge">MOST POPULAR</div>
-						<h3>Professional</h3>
-						<div class="price">$49<span>/mo</span></div>
-						<p>For growing businesses scaling fast.</p>
-						<ul>
-							<li>Unlimited messages</li>
-							<li>Advanced AI training</li>
-							<li>All Channel integrations</li>
-							<li>Priority support</li>
-						</ul>
-						<button class="btn btn-primary">Start Free Trial</button>
-					</div>
-					<div class="pricing-card">
-						<h3>Enterprise</h3>
-						<div class="price">Custom</div>
-						<p>Fully tailored solutions for big teams.</p>
-						<ul>
-							<li>Custom AI models</li>
-							<li>Dedicated success manager</li>
-							<li>SOC2 compliance docs</li>
-							<li>SLA guarantee</li>
-						</ul>
-						<button class="btn btn-outline">Contact Sales</button>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Final CTA -->
-		<section class="cta-section">
+	<!-- Final CTA -->
+		<section id="contact" class="cta-section">
 			<div class="container">
 				<div class="cta-wrapper">
-					<h2>Ready to transform your response speed?</h2>
-					<p>Join thousands of businesses already scaling with Balescepat.</p>
+					<div class="section-badge">READY TO START?</div>
+					<h2>Let's build your <span>next</span> big thing</h2>
+					<p>Schedule a 30-minute discovery call to discuss your project requirements and how we can help you scale.</p>
 					<div class="cta-btns">
-						<button class="btn btn-primary btn-lg">Get Started Now</button>
-						<button class="btn btn-outline btn-lg">Contact Sales</button>
+						<button class="btn btn-primary btn-lg"><Calendar style="margin-right: 10px;" size={18} /> Book a Consultation</button>
+						<button class="btn btn-outline btn-lg">Email our Team</button>
 					</div>
 				</div>
 			</div>
@@ -216,25 +217,26 @@ import { Zap, BarChart3, Globe, Shield, MessageSquare, ArrowRight } from 'lucide
 			<div class="footer-grid">
 				<div class="f-brand">
 					<div class="logo">balescepat<span>.</span></div>
-					<p>Leading the revolution in customer communication speed.</p>
+					<p>Engineering excellence in AI and Enterprise infrastructure.</p>
 				</div>
 				<div class="f-links">
 					<div class="link-col">
-						<h4>Product</h4>
-						<a href="#">Features</a>
-						<a href="#">Pricing</a>
+						<h4>Expertise</h4>
+						<a href="#">AI Development</a>
+						<a href="#">Software Eng.</a>
 						<a href="#">Security</a>
 					</div>
 					<div class="link-col">
-						<h4>Company</h4>
-						<a href="#">About</a>
-						<a href="#">Blog</a>
-						<a href="#">Careers</a>
+						<h4>Offerings</h4>
+						<a href="#">Whitelabel AI</a>
+						<a href="#">Training</a>
+						<a href="#">LMS Systems</a>
 					</div>
 					<div class="link-col">
-						<h4>Legal</h4>
-						<a href="#">Privacy</a>
-						<a href="#">Terms</a>
+						<h4>Connect</h4>
+						<a href="#">LinkedIn</a>
+						<a href="#">GitHub</a>
+						<a href="#">Contact</a>
 					</div>
 				</div>
 			</div>
@@ -451,6 +453,11 @@ import { Zap, BarChart3, Globe, Shield, MessageSquare, ArrowRight } from 'lucide
 	}
 
 	.section-title {
+		margin-bottom: 5rem;
+	}
+
+	.section-header-center {
+		text-align: center;
 		margin-bottom: 5rem;
 	}
 
@@ -739,9 +746,72 @@ import { Zap, BarChart3, Globe, Shield, MessageSquare, ArrowRight } from 'lucide
 		font-weight: 800;
 	}
 
+	/* Expertise */
+	.expertise-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2.5rem;
+	}
+
+	.exp-item {
+		padding: 3rem;
+		border: 1px solid var(--border);
+		border-radius: 32px;
+		background: #FAFAFA;
+	}
+
+	.exp-item h4 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.tech-tags {
+		display: flex;
+		gap: 0.5rem;
+		margin-top: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.tech-tags span {
+		background: white;
+		border: 1px solid var(--border);
+		padding: 0.3rem 0.8rem;
+		border-radius: 9999px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--primary);
+	}
+
+	/* Process */
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+	}
+
+	.step-num {
+		font-size: 3rem;
+		font-weight: 900;
+		color: var(--accent);
+		opacity: 0.5;
+		margin-bottom: 1.5rem;
+	}
+
+	.step h4 {
+		color: white;
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+	}
+
+	.step p {
+		color: rgba(255,255,255,0.6);
+		font-size: 0.95rem;
+	}
+
 	/* Tablet/Mobile */
 	@media (max-width: 1024px) {
-		.features-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+		.features-grid, .pricing-grid, .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+		.process-steps { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
 		.pricing-card.featured { transform: scale(1); }
 		.footer-grid { grid-template-columns: 1fr; }
 	}
@@ -749,10 +819,11 @@ import { Zap, BarChart3, Globe, Shield, MessageSquare, ArrowRight } from 'lucide
 	@media (max-width: 768px) {
 		.nav-links, .nav-actions .login { display: none; }
 		.hero h1 { font-size: 3.5rem; }
-		.features-grid, .testimonial-grid, .pricing-grid, .f-links { grid-template-columns: 1fr; }
+		.features-grid, .testimonial-grid, .pricing-grid, .f-links, .expertise-grid, .process-steps { grid-template-columns: 1fr; }
 		.hero-visual, .globe-wrap { height: 300px; width: 300px; }
 		.cta-btns { flex-direction: column; }
 		.dark-section { margin: 1rem; border-radius: 32px; padding: 6rem 0; }
 		.footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
+		.step { text-align: center; }
 	}
 </style>
